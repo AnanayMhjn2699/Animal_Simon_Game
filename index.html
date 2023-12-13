@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Simon</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+
+<body>
+  <h1 id="level-title">Press Any Key to Start</h1>
+  <div class="expandable-container">
+    <button id="expandButton">Instructions</button>
+    <div class="expandable-content" id="expandContent">
+      <p><ul>
+        <li>Press any key to start.</li>
+        <li>One block will flash and also respective sound will be played.</li>
+        <li>You are required to click on that block to proceed.</li><li>The next block will flash subsequently.</li>
+        <li>Just don't forget the sequence because you are required to put in all the sequence.</li>
+        <li>Happy Playing🤖</li>
+      </ul></p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+
+      <div type="button" id="green" class="btn green">
+        <img class="image" src="images/elephant_image.png">
+
+      </div>
+
+      <div type="button" id="red" class="btn red">
+        <img class="image" src="images/horse_image.png">
+
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div type="button" id="yellow" class="btn yellow">
+        <img class="image" src="images/eagle_image.png">
+
+      </div>
+      <div type="button" id="blue" class="btn blue">
+        <img class="image" src="images/sheep_image.png">
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="game.js"></script>
+</body>
+
+</html>
