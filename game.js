@@ -1,6 +1,12 @@
 const buttonColours=["red","blue","green","yellow"];
 let gamePattern=[];
 let userClickedPattern=[];
+let soundOn=true;
+//to set the button text to sound on or off depending on the user choice
+let textInButton="Sound Off";
+if(soundOn)
+    textInButton="Sound On";
+$("#sound-toggler").text(textInButton);
 
 //to check when a button is clicked
 $(".btn").click(function(){
@@ -19,13 +25,16 @@ $(".btn").click(function(){
 let level=0;
 let started=false;
 
-$(document).on("keypress",function(){
+function startTheGame(){
+    $("#score-line").text("");
     if(!started){
         $("h1").text("Level "+level);
         nextSequence();
         started=true;
     }
-});
+};
+
+
 
 //game's logic
 function checkAns(currentLevel){
@@ -45,14 +54,15 @@ function checkAns(currentLevel){
             $("body").removeClass("game-over");
         },200);
         //changing h1
-        $("h1").text("Game Over at level "+level+", Press Any Key to Restart");
+        $("#score-line").text("Your score is "+(level-1));
+        //$("h1").html("<button id='start_button' onclick='startTheGame()'>Press to start the game</button>");
 
 
-        //restart the game but no need to put keypress bcoz once started is set to
-        //0 the keypress functionality at 21 line overtakes it 
+        //restart the game 
         started=false;
         level=0;
         gamePattern=[];
+        $("h1").html("<button id='start_button' onclick='startTheGame()'>Restart the game</button>");
     }
 }
 
@@ -73,10 +83,12 @@ function nextSequence(){
     playSound(randomChosenColour);
 }
 
-//function to play sounds when a button is falshed or clicked
+//function to play sounds when a button is flashed or clicked
 function playSound(name){
-    var audio = new Audio("sounds/" + name + ".mp3");
-    audio.play();
+    if(soundOn){
+        var audio = new Audio("sounds/" + name + ".mp3");
+        audio.play();
+    }
 }
 //function to animate the process of clicking the button  
 function animatePress(currentColour){
@@ -85,7 +97,14 @@ function animatePress(currentColour){
         $("#"+currentColour).removeClass("pressed");
     }, 100);
 }
-
+//function to toggle the sound on off
+function toggleSound(){
+    soundOn=!soundOn;
+    let textInButton="Sound Off";
+    if(soundOn)
+        textInButton="Sound On";
+    $("#sound-toggler").text(textInButton);
+}
 
 //instructions menu
 const expandButton = $("#expandButton")

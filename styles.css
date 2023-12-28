@@ -15,6 +15,10 @@ body {
   background-color: #FEF2BF;
 }
 
+#start_button{
+  color: #011F3F;
+  background-color: #FEF2BF;
+}
 .expandable-content {
   display: none;
   padding: 10px;
@@ -27,7 +31,14 @@ body {
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
-  margin:  5%;
+  margin:  3%;
+  color: #FEF2BF;
+}
+
+#score-line{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  margin:  3% 1%;
   color: #FEF2BF;
 }
 

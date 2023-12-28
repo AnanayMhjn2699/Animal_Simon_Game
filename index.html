@@ -3,18 +3,20 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Animal_Simon_Game</title>
+  <title>Simon_Animal_Game</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 
 <body>
-  <h1 id="level-title">Press Any Key to Start</h1>
+  <p id="score-line"></p>
+  <button id="sound-toggler" onclick="toggleSound()">Sound On</button>
+  <h1 id="level-title"><button id="start_button" onclick="startTheGame()">Press to start the game</button></h1>
   <div class="expandable-container">
     <button id="expandButton">Instructions</button>
     <div class="expandable-content" id="expandContent">
       <p><ul>
-        <li>Press any key to start.</li>
+        <li>Press the button to start.</li>
         <li>One block will flash and also respective sound will be played.</li>
         <li>You are required to click on that block to proceed.</li><li>The next block will flash subsequently.</li>
         <li>Just don't forget the sequence because you are required to put in all the sequence.</li>
